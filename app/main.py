@@ -13,12 +13,12 @@ from app.db.session import engine
 async def lifespan(_: FastAPI):
     # Все нужные модели должны быть импортированы перед запуском
     from app.models.task import TaskORM
-    Base.metadata.create_all(bind=engine)
+    # Base.metadata.create_all(bind=engine)
     yield
 
 
 settings = get_settings()
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
