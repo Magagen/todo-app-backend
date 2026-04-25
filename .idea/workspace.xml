@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076e6c99-aa16-46d3-8404-797ccac08373" name="Changes" comment="task 4 completed">
+    <list default="true" id="076e6c99-aa16-46d3-8404-797ccac08373" name="Changes" comment="task 5 completed">
+      <change afterPath="$PROJECT_DIR$/app/core/logging.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/middlewares.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
@@ -30,12 +32,12 @@
     &quot;assignee&quot;: &quot;Magagen&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Magagen/todo-app-backend.git",
-    "accountId": "deab2e72-8172-47e6-bd48-7afa1bc13b61"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Magagen/todo-app-backend.git&quot;,
+    &quot;accountId&quot;: &quot;deab2e72-8172-47e6-bd48-7afa1bc13b61&quot;
   }
-}]]></component>
+}</component>
   <component name="HttpClientOnboardingState">{
   &quot;isOnboardingCommentShown&quot;: true
 }</component>
@@ -133,7 +135,8 @@
       <workItem from="1774643525248" duration="8147000" />
       <workItem from="1775080028062" duration="7899000" />
       <workItem from="1775291547732" duration="2813000" />
-      <workItem from="1776364783920" duration="3269000" />
+      <workItem from="1776364783920" duration="8394000" />
+      <workItem from="1777138170827" duration="2252000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -167,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775087946222</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="task 5 completed">
+      <option name="closed" value="true" />
+      <created>1776369357421</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1776369357421</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,10 +200,11 @@
     <MESSAGE value="task 1 complete" />
     <MESSAGE value="task 3 completed" />
     <MESSAGE value="task 4 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="task 4 completed" />
+    <MESSAGE value="task 5 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="task 5 completed" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/todo_app_backend$category.coverage" NAME="category Coverage Results" MODIFIED="1775086435913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/services" />
-    <SUITE FILE_PATH="coverage/todo_app_backend$main.coverage" NAME="main Coverage Results" MODIFIED="1775086672931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/todo_app_backend$main.coverage" NAME="main Coverage Results" MODIFIED="1776376093561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>
