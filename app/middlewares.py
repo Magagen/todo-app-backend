@@ -1,15 +1,15 @@
-
+import logging
 from time import perf_counter
 
-from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
+from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 from starlette.responses import Response
 
 from app.core.logging import configure_logging
 
-import logging
 configure_logging()
 logger = logging.getLogger("app.middleware")
+
 
 class RequestCounterMiddleware(BaseHTTPMiddleware):
     def __init__(self, app):

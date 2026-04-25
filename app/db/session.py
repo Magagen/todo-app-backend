@@ -5,9 +5,11 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from app.core.config import get_settings
 
-
 settings = get_settings()
-engine = create_engine(settings.database_url)
+if settings.database_url is not None:
+    engine = create_engine(settings.database_url)
+else:
+    raise ValueError("No database url provided")
 SessionLocal = sessionmaker(bind=engine)
 
 
