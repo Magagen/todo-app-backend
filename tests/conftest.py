@@ -3,7 +3,9 @@ from unittest.mock import Mock
 import pytest
 from sqlalchemy.orm import Session
 
+from app.repositories.category import CategoryRepository
 from app.repositories.task import TaskRepository
+from app.services.category import CategoryService
 from app.services.task import TaskService
 
 
@@ -25,3 +27,15 @@ def service(db_mock: Mock, repository_mock: Mock) -> TaskService:
     task_service = TaskService(db_mock)
     task_service.repository = repository_mock
     return task_service
+
+
+@pytest.fixture
+def category_repository_mock() -> Mock:
+    return Mock(spec=CategoryRepository)
+
+
+@pytest.fixture
+def category_service(db_mock: Mock, category_repository_mock: Mock) -> CategoryService:
+    category_service = CategoryService(db_mock)
+    category_service.repository = category_repository_mock
+    return category_service

@@ -4,7 +4,7 @@ import pytest
 
 from app.models.task import TaskORM
 from app.schemas.task import TaskCreate, TaskRead, TaskUpdate
-from app.services.task import TaskService
+from app.services.task import TaskNotFoundError, TaskService
 
 
 def test_list_tasks_returns_pydantic_models(
@@ -84,3 +84,30 @@ def test_update_task_updates_only_passed_fields(
         "title": expected_title,
         "completed": expected_completed,
     }
+
+
+def test_update_task_raises_when_task_not_found(
+    service: TaskService,
+    db_mock: Mock,
+    repository_mock: Mock,
+) -> None:
+    repository_mock.get_by_id.return_value = None
+
+    with pytest.raises(TaskNotFoundError):  # Должна произойти указанная ошибка
+        service.update_task("missing-task", TaskUpdate(title="Неважно"))
+
+    db_mock.commit.assert_not_called()
+
+
+def test_delete_task(
+    service: TaskService,
+    db_mock: Mock,
+    repository_mock: Mock,
+) -> None:
+    created_task = TaskORM(id="task-1", title="Новая задача", completed=False)
+    repository_mock.get_by_id.return_value = created_task
+    service.delete_task("task-1")
+
+    repository_mock.get_by_id.assert_called_once_with("task-1")
+    repository_mock.delete.assert_called_once_with(created_task)
+    db_mock.commit.assert_called_once_with()

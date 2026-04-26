@@ -26,19 +26,19 @@ class CategoryService:
         self, category_id: str, payload: CategoryUpdate
     ) -> CategoryRead:
         category = self.repository.get_by_id(category_id)
-        if category is not None:
-            if payload.name is not None:
-                category.name = payload.name
-        else:
+        if category is None:
             raise CategoryNotFoundError()
+
+        if payload.name is not None:
+            category.name = payload.name
 
         self.db.commit()
         return CategoryRead.model_validate(category)
 
     def delete_category(self, category_id: str) -> None:
         category = self.repository.get_by_id(category_id)
-        if category is not None:
-            self.repository.delete(category)
-        else:
+        if category is None:
             raise CategoryNotFoundError()
+
+        self.repository.delete(category)
         self.db.commit()
